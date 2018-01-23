@@ -52,7 +52,7 @@ elif is_python:
 no_bad_ones = True
 for in_file, ans_file in testing_tuples:
     test_for(in_file)
-    os.system('diff -Z tmp/output {} > tmp/diff'.format(os.path.join(test_dir, ans_file)))
+    os.system('diff tmp/output {} > tmp/diff'.format(os.path.join(test_dir, ans_file)))
     res = os.stat('tmp/diff')
     if res.st_size > 0:
         no_bad_ones = False
